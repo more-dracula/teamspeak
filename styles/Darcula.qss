@@ -108,6 +108,10 @@ QToolBar::separator {
 	margin-left: 3px;
 	margin-right: 3px;
 }
+/* Can't seem to get this childish child object to cooperate. */
+QToolBar > QMenu {
+	background-color: red;
+}
 
 QToolButton {
 	border: 1px solid transparent;
@@ -116,8 +120,8 @@ QToolButton {
 	color: #BBB;
 }
 QToolBar QToolButton {
-	height: 18px;
-	width: 18px;
+	height: 16px;
+	width: 16px;
 	padding: 1px;
 }
 QToolButton:pressed {
@@ -143,8 +147,7 @@ QToolButton[popupMode="1"] {
 	/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #505c78, stop:1 #6f80aa);*/
 	border-radius: 3px;
 	padding-right: 15px;
-	/*margin-top: 5px;*/
-	/*margin-bottom: 5px;*/
+	height: 12px;
 }
 QToolButton[popupMode="1"]:hover,
 QToolButton[popupMode="1"]:checked,
@@ -169,9 +172,6 @@ QToolButton::menu-button:pressed {
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
 }
-
-
-
 
 /*
 QToolButton#newBookmarkButton, QToolButton#newBookmarkFolderButton, QToolButton#removeBookmarkButton {
@@ -242,7 +242,6 @@ QToolBoxButton#qt_toolbox_toolboxbutton {
 
 /*
  * Main window area with server tabs
- * No relevant documentation on styling.
  */
 QWidget#MainWindowServerTabsWidget {
 	border-top: 1px solid #282828;
@@ -257,11 +256,19 @@ QTabBar {
 	qproperty-drawBase: false;
 }
 QTabBar::tab {
-	/* border-top: 1px solid #282828; */
-	/* max-height: 25px; */
+	height: 16px;
 	padding: 5px;
-	/* padding-left: 5px; */
-	color: #BBBBBB;
+	color: #BBB;
+}
+QTabBar::close-button {
+	background: red;
+}
+ImprovedTabBarCloseButton,
+ImprovedTabBarCloseButton:hover {
+	/*image: url("styles:Darcula/hover.png");*/
+	border: none;
+	background: none;
+	padding: 1px;
 }
 QTabBar::tab:selected {
 	background-color: #515658;
@@ -274,44 +281,49 @@ QTabBar::close-button {
 QTabBar::close-button:hover {
 }
 
+TreeView {
+	background-color: #2B2B2B;
+	border: none;
+}
+TreeView::item:hover,
+TreeView::branch:hover {
+	background: transparent;
+}
+TreeView::item:selected,
+TreeView::branch:selected {
+	background: #4B6EAF;
+	color: #BBB;
+}
+
+
 /*
  * Chat feed tabs
  */
-ImprovedTabBar#ChatTabBar::tab {
+/*ImprovedTabBar#ChatTabBar::tab {
 	border-top: none;
-}
+}*/
 
 /*
  * Elements such as the server tree view
  * https://doc.qt.io/qt-5.6/stylesheet-examples.html#customizing-qtreeview
  */
-QTreeView {
+/*QTreeView {
 	background-color: #2B2B2B;
 	show-decoration-selected: 1;
 	border: 1px solid transparent;
 	qproperty-alternatingRowColors: false;
-}
+}*/
 /*QTreeView::item {*/
 	/*padding-bottom: 100px;*/
 	/*height: 20px;*/
 /*}*/
-QTreeView::item:hover,
-QTreeView::branch:hover {
-	background: transparent;
-}
 
-QTreeView::item:selected:active,
-QTreeView::branch:selected:active {
-	background: #4B6EAF;
-	color: #BBB;
-}
-
-QTreeView::item:selected:!active,
+/*QTreeView::item:selected:!active,
 QTreeView::branch:selected:!active {
 	background: #0D293E;
 
 	color: #BBB
-}
+}*/
 
 /*QTreeView::item:selected {*/
 	/* redundant text color property */
@@ -356,11 +368,10 @@ QTreeView::branch:open:has-children:has-siblings  {
 /*
  * Server tree view specific stuff
  */
-QTreeView#ServerTreeView {
-	/* remove line border junk */
-	border: none;
-	border-top: 3px solid #515658;
-}
+/*QTreeView#ServerTreeView {*/
+	/* remove line border junk *
+	/*border-top: 3px solid #515658;*/
+/*}*/
 /*
 QScrollBar:vertical {
 	border: 0px solid transparent;
@@ -867,9 +878,9 @@ QLabel#OptionsHeadlineTitleLabel {
 }
 
 /* ImprovedTabBarCloseButton#ServerTabCloseButton, */
-ImprovedTabBarCloseButton#ChatTabCloseButton {
+/*ImprovedTabBarCloseButton#ChatTabCloseButton {*/
 	/* image: url("styles/intellij/hover.png"); */
-}
+/*}*/
 
 
 ConnectionInfoDialog {
