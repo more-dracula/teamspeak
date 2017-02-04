@@ -98,34 +98,147 @@ QToolBar {
 	/* Disable the handle and make the bar static like IntelliJ IDEA */
   /* https://doc.qt.io/qt-5.6/qtoolbar.html#movable-prop */
   qproperty-movable: false;
-  /*background-color: #3C3F41;*/
 	/* Make the spacing of the Toolbar buttons accurate to IntelliJ IDEA */
 	spacing: 2px;
 }
-QToolBar QToolButton {
-  height: 16px;
-  width: 16px;
-  padding: 1px;
-  margin-left: 1px;
-  margin-right: 1px;
-}
 QToolBar::separator {
-  image: url(styles/Dracula/toolbar-seperator.png);
+	margin-top: 3px;
+	width: 1px;
+	border-right: 1px dotted #6F6F6F;
+	margin-left: 3px;
+	margin-right: 3px;
 }
-QToolBar QToolButton:hover,
-QToolBar QToolButton:on {
-	background: #5B5D5F;
-	border: 1px solid #7A7F83;
+
+QToolButton {
+	border: 1px solid transparent;
+	border-radius: none;
+	background-color: none;
+	color: #BBB;
+}
+QToolBar QToolButton {
+	height: 18px;
+	width: 18px;
+	padding: 1px;
+}
+QToolButton:pressed {
+	border: 1px solid #7A8084;
 	border-radius: 3px;
-}
-/* TODO: Fix this shit */
-QToolBar QToolButton[popupMode="1"]:hover,
-QToolBar QToolButton[popupMode="1"]:checked {
 	background: #5B5D5F;
-	/*border: 1px solid red;*/
+	/*color: #000;*/
+}
+QToolButton:hover {
+	border: 1px solid #7A8084;
+	border-radius: 3px;
+	background: #5B5D5F;
+	/*color: #000;*/
+}
+QToolButton:checked, QToolButton#serverQueryAdvancedButton:checked {
+	border: 1px solid #7A8084;
+	border-radius: 3px;
+	background: #5B5D5F;
+	/*color: #000;*/
+}
+QToolButton[popupMode="1"] {
+	/*border: 1px solid #5F5F5F;*/
+	/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #505c78, stop:1 #6f80aa);*/
+	border-radius: 3px;
+	padding-right: 15px;
+	/*margin-top: 5px;*/
+	/*margin-bottom: 5px;*/
+}
+QToolButton[popupMode="1"]:hover,
+QToolButton[popupMode="1"]:checked,
+QToolButton[popupMode="1"]:pressed {
+	border: 1px solid #767676;
+	/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #505c78, stop:1 #6f80aa);*/
 	border-radius: 3px;
 	padding-right: 15px;
 }
+
+QToolButton::menu-button {
+	border: 1px solid transparent;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: none;
+	width: 12px;
+	/*padding: 1px;*/
+}
+QToolButton::menu-button:hover,
+QToolButton::menu-button:pressed {
+	border: 1px solid #737373;
+	border-left: none;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+
+
+
+/*
+QToolButton#newBookmarkButton, QToolButton#newBookmarkFolderButton, QToolButton#removeBookmarkButton {
+	background: none;
+	border: 1px solid transparent;
+}
+QToolButton#newBookmarkButton:hover, QToolButton#newBookmarkFolderButton:hover, QToolButton#removeBookmarkButton:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6c7996, stop:1 #90a3d4);
+	border: 1px solid #0a057b;
+	border-radius: 3px;
+}
+QToolButton#serverQueryRunButton, QToolButton#serverQuerySingleStepsButton, QToolButton#serverQueryStopButton, QToolButton#serverQueryRestartButton, QToolButton#serverQueryAdvancedButton, QToolButton#serverQueryClearHighlightButton, QToolButton#newSQScriptButton, QToolButton#updateSQScriptButton, QToolButton#removeSQScriptButton,QToolButton#idAddButton, QToolButton#idRemoveButton, QToolButton#idSelectDefaultButton, QToolButton#idImportButton, QToolButton#idExportButton, QToolButton#addGroupButton, QToolButton#removeGroupButton, QToolButton#copyGroupButton, QToolButton#renameGroupButton, QToolButton#displayClientsButton, QToolButton#addClientButton, QToolButton#removeClientButton, QToolButton#makeCurrentChannelDefaultToolButton, QToolButton#improvedIdentityQualityButton, QToolButton#toolButtonIcon, QToolButton#copyServerIPButton, QToolButton#copyClientIPButton, QToolButton#whisperListAddButton, QToolButton#whisperListDelButton, QToolButton#whisperListRenameButton {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop: 0 #6a96b9, stop: 1 #c2d7e1);
+	border: 1px solid #0a057b;
+	border-radius: 3px;
+}
+QToolButton#serverQueryRunButton:hover, QToolButton#serverQuerySingleStepsButton:hover, QToolButton#serverQueryStopButton:hover, QToolButton#serverQueryRestartButton:hover, QToolButton#serverQueryAdvancedButton:hover, QToolButton#serverQueryClearHighlightButton:hover, QToolButton#newSQScriptButton:hover, QToolButton#updateSQScriptButton:hover, QToolButton#removeSQScriptButton:hover,QToolButton#idAddButton:hover, QToolButton#idRemoveButton:hover, QToolButton#idSelectDefaultButton:hover, QToolButton#idImportButton:hover, QToolButton#idExportButton:hover,QToolButton#addGroupButton:hover, QToolButton#removeGroupButton:hover, QToolButton#copyGroupButton:hover, QToolButton#renameGroupButton:hover, QToolButton#displayClientsButton:hover, QToolButton#addClientButton:hover, QToolButton#removeClientButton:hover, QToolButton#makeCurrentChannelDefaultToolButton:hover, QToolButton#improvedIdentityQualityButton:hover, QToolButton#toolButtonIcon:hover, QToolButton#copyServerIPButton:hover, QToolButton#copyClientIPButton:hover, QToolButton#whisperListAddButton:hover, QToolButton#whisperListDelButton:hover, QToolButton#whisperListRenameButton:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a5d3e8, stop:1 #ccc);
+	color: #0a057b;
+}
+QToolButton#serverQueryStopButton:disabled, QToolButton#serverQueryRestartButton:disabled {
+	border: 1px solid #0a057b;
+	border-radius: 3px;
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ccc, stop: 1 #ddd);
+	color: #7b7b7b;
+}
+QToolButton#TextFormatButton, QToolButton#searchClearButton, QToolButton#appScanImportButton, QToolButton#appScanReloadButton, QToolButton#fbDirUpButton, QToolButton#fbRootButton, QToolButton#fbRefreshButton, QToolButton#fbUploadButton, QToolButton#fbDownloadButton, QToolButton#fbCreateDirectoryButton, QToolButton#fbDeleteButton, QToolButton#fbFilterButton, QToolButton#descEditButton,QToolButton#fbViewIconsButton, QToolButton#fbViewListButton, QToolButton#filterGoButton, QToolButton#clientUpdateButton, QToolButton#filterClearButton, QToolButton#banAddButton, QToolButton#banRemoveButton, QToolButton#banEditButton, QToolButton#complainRemoveButton, QToolButton#foregroundColorSelectButton, QToolButton#backgroundColorSelectButton, QToolButton#EmoticonButton, QToolButton#iconToolButton {
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: none;
+}
+QToolButton#TextFormatButton:hover, QToolButton#searchClearButton:hover, QToolButton#appScanImportButton:hover, QToolButton#appScanReloadButton:hover, QToolButton#fbDirUpButton:hover, QToolButton#fbRootButton:hover, QToolButton#fbRefreshButton:hover, QToolButton#fbUploadButton:hover, QToolButton#fbDownloadButton:hover, QToolButton#fbCreateDirectoryButton:hover, QToolButton#fbDeleteButton:hover, QToolButton#fbFilterButton:hover, QToolButton#descEditButton:hover,QToolButton#fbViewIconsButton:hover, QToolButton#fbViewListButton:hover, QToolButton#filterGoButton:hover, QToolButton#clientUpdateButton:hover, QToolButton#filterClearButton:hover, QToolButton#banAddButton:hover, QToolButton#banRemoveButton:hover, QToolButton#banEditButton:hover, QToolButton#complainRemoveButton:hover, QToolButton#foregroundColorSelectButton:hover, QToolButton#backgroundColorSelectButton:hover, QToolButton#EmoticonButton:hover, QToolButton#iconToolButton:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a5d3e8, stop:1 #ccc);
+	color: #0a057b;
+	border: 1px solid #0a057b;
+	border-radius: 3px;
+}
+QToolButton#TextFormatButton:checked, QToolButton#fbViewIconsButton:checked, QToolButton#fbViewListButton:checked {
+	border: 1px solid #505c78;
+	border-radius: 3px;
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #505c78, stop:1 #6f80aa);
+	color: #000;
+}
+QToolButton#toolButtonBold, QToolButton#toolButtonItalic, QToolButton#toolButtonUnderLine, QToolButton#toolButtonFColor {
+	background-color: transparent;
+	border: 1px solid #0a057b;
+	border-radius: 3px;
+}
+QToolButton#toolButtonBold:hover, QToolButton#toolButtonItalic:hover, QToolButton#toolButtonUnderLine:hover, QToolButton#toolButtonFColor:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a5d3e8, stop:1 #ccc);
+	color: #0a057b;
+	border: 1px solid #0a057b;
+	border-radius: 3px
+}
+QToolButton#toolButtonBold:checked, QToolButton#toolButtonItalic:checked, QToolButton#toolButtonUnderLine:checked, QToolButton#toolButtonFColor:checked {
+	border: 1px solid #505c78;
+	border-radius: 3px;
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a5d3e8, stop:1 #ccc);
+	color: #000;
+}
+QToolBoxButton#qt_toolbox_toolboxbutton {
+	background-color: #c2d7e1;
+	border: 1px solid #0a057b;
+	border-radius: 3px;
+}*/
+
+
 
 /*
  * Main window area with server tabs
@@ -489,20 +602,6 @@ QMenu::item:disabled {
 QMenu::item:disabled:selected {
 	background-color: none;
 }
-
-/* Tool Buttons */
-QToolButton {
-  background-color: transparent;
-}
-QToolButton:hover {
-  background: #5B5D5F;
-	border: 1px solid #7A7F83;
-	border-radius: 3px;
-}
-
-/*QToolButton#AwayButton {*/
-  /*width: 40px;*/
-/*}*/
 
 MainWindowChatWidget {
 	background-color: #2B2B2B;
@@ -954,23 +1053,8 @@ QWidget#identitiesComboBox {
   /*border: 9px solid orange;*/
 }
 
-QToolButton#ServerTabCloseButton {
-  border: none;
-  background: none;
-}
-
-QToolButton#ServerTabCloseButton:hover {
-  border: none;
-  background: none;
-}
-
 QTabBar::close-button {
   image: url(styles:Darcula/treeExpandNode.png);
-}
-
-QToolButton#AwayButton,
-QToolButton#SpeakerMuteButton {
-	padding-right: 15px;
 }
 
 QComboBoxListView {
@@ -1044,46 +1128,4 @@ QListWidget#ContentsWidget {
 
 Banner {
 	background-color: #2B2B2B;
-}
-
-/* ToolButton */
-QToolButton {
-	border: 1px solid transparent;
-	border-radius: none;
-	background-color: none;
-	color: #000;
-}
-QToolButton:pressed {
-	border: 1px solid #505c78;
-	border-radius: 3px;
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #505c78, stop:1 #6f80aa);
-	color: #000;
-}
-QToolButton:hover {
-	border: 1px solid #505c78;
-	border-radius: 3px;
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a5d3e8, stop:1 #ccc);
-	color: #000;
-}
-QToolButton:checked, QToolButton#serverQueryAdvancedButton:checked {
-	border: 1px solid #505c78;
-	border-radius: 3px;
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #505c78, stop:1 #6f80aa);
-	color: #000;
-}
-QToolButton[popupMode="1"] {
-	/*border: 1px solid transparent;*/
-	/*border-radius: 3px;*/
-	/*padding-right: 15px;*/
-}
-
-QToolButton::menu-button {
-	border: 1px solid transparent;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: none;
-	width: 12px;
-}
-QToolButton::menu-button:hover {
-	border: 1px solid #505c78;
-	border-radius: 3px;
 }
