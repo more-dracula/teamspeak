@@ -281,20 +281,58 @@ QTabBar::close-button {
 QTabBar::close-button:hover {
 }
 
-TreeView {
+QTreeView {
 	background-color: #2B2B2B;
 	border: none;
 }
-TreeView::item:hover,
-TreeView::branch:hover {
+QTreeView::item:hover,
+QTreeView::branch:hover {
 	background: transparent;
 }
-TreeView::item:selected,
-TreeView::branch:selected {
+QTreeView::item:selected,
+QTreeView::branch:selected {
 	background: #4B6EAF;
 	color: #BBB;
 }
 
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings {
+        /* border-image: none; */
+        image: url(styles:Darcula/treeCollapseNode.png);
+}
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings  {
+        /* border-image: none; */
+        image: url(styles:Darcula/treeExpandNode.png);
+}
+QTreeView::indicator:checked {
+	image: url("styles:Darcula/checkbox_checked.png");
+}
+QTreeView::indicator:unchecked {
+	image: url("styles:Darcula/checkbox_unchecked.png");
+}
+
+QScrollBar:vertical {
+	border: none;
+	width: 12px;
+}
+QScrollBar::handle:vertical {
+	background-color: #545454;
+	border-left: 2px solid #2B2B2B;
+	border-right: 2px solid #2B2B2B;
+	min-height: 35px;
+}
+
+QScrollBar:horizontal {
+	border: none;
+	height: 12px;
+}
+QScrollBar::handle:horizontal {
+	background-color: #545454;
+	border-top: 2px solid #2B2B2B;
+	border-bottom: 2px solid #2B2B2B;
+	min-height: 35px;
+}
 
 /*
  * Chat feed tabs
@@ -350,20 +388,6 @@ QTreeView::branch:selected:!active {
 QTreeView::branch:selected:!active {
 	background-color: #0D293E;
 }*/
-
-/*
- * Tree view branches
- */
-QTreeView::branch:has-children:!has-siblings:closed,
-QTreeView::branch:closed:has-children:has-siblings {
-        /* border-image: none; */
-        image: url(styles:Darcula/treeCollapseNode.png);
-}
-QTreeView::branch:open:has-children:!has-siblings,
-QTreeView::branch:open:has-children:has-siblings  {
-        /* border-image: none; */
-        image: url(styles:Darcula/treeExpandNode.png);
-}
 
 /*
  * Server tree view specific stuff
@@ -719,13 +743,13 @@ QCheckBox::indicator, QGroupBox::indicator {
 QCheckBox::indicator:unchecked,
 QGroupBox::indicator:unchecked {
 /* QTreeView::indicator:unchecked { */
-    image: url(styles:Darcula/checkbox_unchecked.png);
+    image: url("styles:Darcula/checkbox_unchecked.png");
 }
 
 QCheckBox::indicator:checked ,
 QGroupBox::indicator:checked {
 /* QTreeView::indicator:checked { */
-    image: url(styles:Darcula/checkbox_checked.png);
+    image: url("styles:Darcula/checkbox_checked.png");
 }
 
 QRadioButton::indicator {
