@@ -232,12 +232,12 @@ QTreeView::branch:selected:!active {
 QTreeView::branch:has-children:!has-siblings:closed,
 QTreeView::branch:closed:has-children:has-siblings {
         /* border-image: none; */
-        image: url(styles:Dracula/treeCollapseNode.png);
+        image: url(styles:Darcula/treeCollapseNode.png);
 }
 QTreeView::branch:open:has-children:!has-siblings,
 QTreeView::branch:open:has-children:has-siblings  {
         /* border-image: none; */
-        image: url(styles:Dracula/treeExpandNode.png);
+        image: url(styles:Darcula/treeExpandNode.png);
 }
 
 /*
@@ -358,7 +358,7 @@ QSplitter::handle:horizontal {
 	border-left: 1px solid #383B3D;
 	border-right: 1px solid #383B3D;
 	width: 20px;
-	image: url(styles:Dracula/splitter.png);
+	image: url(styles:Darcula/splitter.png);
 }
 
 QSplitter::handle:vertical {
@@ -609,13 +609,13 @@ QCheckBox::indicator, QGroupBox::indicator {
 QCheckBox::indicator:unchecked,
 QGroupBox::indicator:unchecked {
 /* QTreeView::indicator:unchecked { */
-    image: url(styles:Dracula/checkbox_unchecked.png);
+    image: url(styles:Darcula/checkbox_unchecked.png);
 }
 
 QCheckBox::indicator:checked ,
 QGroupBox::indicator:checked {
 /* QTreeView::indicator:checked { */
-    image: url(styles:Dracula/checkbox_checked.png);
+    image: url(styles:Darcula/checkbox_checked.png);
 }
 
 QRadioButton::indicator {
@@ -624,11 +624,11 @@ QRadioButton::indicator {
 }
 
 QRadioButton::indicator::unchecked {
-	image: url(styles:Dracula/radiobutton_unchecked.png);
+	image: url(styles:Darcula/radiobutton_unchecked.png);
 }
 
 QRadioButton::indicator::checked {
-    image: url(styles:Dracula/radiobutton_checked.png);
+    image: url(styles:Darcula/radiobutton_checked.png);
 }
 /*
 QFrame, QLabel, QToolTip a {
@@ -815,7 +815,7 @@ QProgressBar#progressBar {
 }
 
 QProgressBar::chunk {
-	background: url(styles:Dracula/loadingBar.png);
+	background: url(styles:Darcula/loadingBar.png);
     /* background-color: #808080; */
     /* width: 10px; */
 	/* border-radius: 5px; */
@@ -859,7 +859,7 @@ QSlider::groove:horizontal {
 }
 
 QSlider::handle:horizontal {
-	image: url(styles:Dracula/slider.png);
+	image: url(styles:Darcula/slider.png);
 	margin: -5px 0;
 }
 
@@ -965,7 +965,7 @@ QToolButton#ServerTabCloseButton:hover {
 }
 
 QTabBar::close-button {
-  image: url(styles:Dracula/treeExpandNode.png);
+  image: url(styles:Darcula/treeExpandNode.png);
 }
 
 QToolButton#AwayButton,
