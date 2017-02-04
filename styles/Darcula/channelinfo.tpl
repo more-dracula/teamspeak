@@ -1,12 +1,12 @@
 <!--
 TeamSpeak 3 Channel Infoframe Template (EN)
- 
-The replaceable variables are embedded in "%%" like %%CHANNEL_NAME%%. At this time you can also use 
-%%?CHANNEL_NAME%% (note the questionmark), which is a tiny "if"- query. Use it, to remove the whole 
+
+The replaceable variables are embedded in "%%" like %%CHANNEL_NAME%%. At this time you can also use
+%%?CHANNEL_NAME%% (note the questionmark), which is a tiny "if"- query. Use it, to remove the whole
 line, if a variable is empty or just "0".
 
-Templates can be placed in "styles/" for default theme or in a sub folder named like an available 
-theme (e.g. "styles/bluesky/"). Be aware that this template will not automaticly be translated when 
+Templates can be placed in "styles/" for default theme or in a sub folder named like an available
+theme (e.g. "styles/bluesky/"). Be aware that this template will not automaticly be translated when
 displayed.
 
 Predefined values have to be inside the html comment-tag to make sure that they will be parsed
@@ -96,7 +96,6 @@ TEMP_CHANNEL_TIME_TO_DELETE
 		<td>
 			%%CHANNEL_CODEC%%
 			&nbsp;
-			<!-- <img src="styles:/bluesky_extended/media/encrypted_12x12.png" alt="%%?CHANNEL_VOICE_DATA_ENCRYPTED_FLAG%%" /> -->
 		</td>
 	</tr>
 	<tr>
@@ -104,18 +103,22 @@ TEMP_CHANNEL_TIME_TO_DELETE
 		<td>%%CHANNEL_CODEC_QUALITY%% (estimated bitrate: %%CHANNEL_CODEC_BITRATE%%/s)</td>
 	</tr>
 	<tr>
+		<td class="label">Voice Data Encryption:</td>
+		<td>%%CHANNEL_VOICE_DATA_ENCRYPTED%%</td>
+	</tr>
+	<tr>
+		<td><hr></td>
+		<td><hr></td>
+	</tr>
+	<tr>
 		<td class="label">Current Clients:</td><td>%%?CHANNEL_CLIENTS_COUNT%% / %%CHANNEL_FLAG_MAXCLIENTS%%</td>
 	</tr>
 	<tr>
 		<td class="label">Needed Talk Power:</td>
-		<td class="red"><img src="iconpath:16x16_moderated.png" height="12" width="12" alt="" title="Request Talk Power to be able to talk in this Channel." />&nbsp;&nbsp;%%?CHANNEL_NEEDED_TALK_POWER%%</td></tr>
+		<td><img src="iconpath:16x16_moderated.png" height="12" width="12" alt="" title="Request Talk Power to be able to talk in this Channel." />&nbsp;&nbsp;%%?CHANNEL_NEEDED_TALK_POWER%%</td></tr>
 	<tr>
 		<td class="label">Subscription Status:</td>
 		<td>%%CHANNEL_SUBSCRIPTION%%</td>
-	</tr>
-	<tr>
-		<td class="label">Voice Data Encryption:</td>
-		<td>%%CHANNEL_VOICE_DATA_ENCRYPTED%%</td>
 	</tr>
 	%%?PLUGIN_INFO_DATA%%
 </table>

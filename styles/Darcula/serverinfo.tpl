@@ -1,13 +1,13 @@
 <!--
 TeamSpeak 3 Server Infoframe Template (EN)
 Copyright 2009-2015 (c) TeamSpeak Systems GmbH
- 
-The replaceable variables are embedded in "%%" like %%SERVER_NAME%%. At this time you can also use 
-%%?SERVER_NAME%% (note the questionmark), which is a tiny "if"- query. Use it, to remove the whole 
+
+The replaceable variables are embedded in "%%" like %%SERVER_NAME%%. At this time you can also use
+%%?SERVER_NAME%% (note the questionmark), which is a tiny "if"- query. Use it, to remove the whole
 line, if a variable is empty or just "0".
 
-Templates can be placed in "styles/" for default theme or in a sub folder named like an available 
-theme (e.g. "styles/bluesky/"). Be aware that this template will not automaticly be translated when 
+Templates can be placed in "styles/" for default theme or in a sub folder named like an available
+theme (e.g. "styles/bluesky/"). Be aware that this template will not automaticly be translated when
 displayed.
 
 Replacable variables for server:
@@ -57,15 +57,18 @@ SERVER_REFRESH_ACTIVE
 		padding: 0px 1px 0px 8px;
 	}
 	.active {
-		color: A8C023;
-		text-decoration: underline;
+		color: #CC7832;
+		text-decoration: bold;
 	}
 	.inactive {
-		color: gray;
-		text-decoration: underline;
+		color: #BBB;
+		text-decoration: bold;
 	}
 	.red {
 		color: red;
+	}
+	a {
+		outline: 0;
 	}
 </style>
 
@@ -81,6 +84,10 @@ SERVER_REFRESH_ACTIVE
 	<td>%%SERVER_ADDRESS%%
 		:%%?SERVER_PORT%%
 	</td>
+	<tr>
+		<td><hr></td>
+		<td><hr></td>
+	</tr>
 	</tr>
 	<tr title="%%SERVER_VERSION%%">
 		<td class="label">Version:</td>
@@ -95,6 +102,10 @@ SERVER_REFRESH_ACTIVE
 		<td>%%SERVER_UPTIME%%</td>
 	</tr>
 	<tr>
+		<td><hr></td>
+		<td><hr></td>
+	</tr>
+	<tr>
 		<td class="label">Current Channels:</td>
 		<td>%%SERVER_CHANNELS_ONLINE%%</td>
 	</tr>
@@ -107,14 +118,18 @@ SERVER_REFRESH_ACTIVE
 		<td class="label">Current Queries:</td>
 		<td>%%SERVER_QUERYCLIENTS_ONLINE%% / %%SERVER_MAXCLIENTS%%</td>
 	</tr>
+	<tr>
+		<td><hr></td>
+		<td><hr></td>
+	</tr>
 	%%?PLUGIN_INFO_DATA%%
 </table>
 
 <table id="list">
-	<tr><td class="space">
-	<img src="iconpath:REFRESH?size=16x16" height="16" width="16" alt="">
-		&nbsp;
-    <a class="inactive" href="%%?SERVER_REFRESH_INACTIVE%%">Refresh</a>
-    <a class="active" href="%%?SERVER_REFRESH_ACTIVE%%">Refresh</a>
-  </td></tr>
+	<tr>
+		<td class="space">
+	    <a class="inactive" href="%%?SERVER_REFRESH_INACTIVE%%">Refresh</a>
+	    <a class="active" href="%%?SERVER_REFRESH_ACTIVE%%">Refresh</a>
+  	</td>
+	</tr>
 </table>
