@@ -977,12 +977,6 @@ QComboBoxListView {
 	background-color: red;
 }
 
-
-
-
-
-
-
 /*QListView {
 	background-color: #3E434C;
 	outline: none;
