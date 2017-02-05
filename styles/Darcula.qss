@@ -85,6 +85,12 @@ QMenuBar::item:selected, QMenuBar::item:pressed {
 	background: #4B6EAF;
 }
 
+QMenu {
+  background-color: #3C3F41;
+	border: 1px solid #515658;
+  margin: 0px; /* some spacing around the menu */
+}
+
 /*
  * Customizable toolbar
  * https://doc.qt.io/qt-5.6/stylesheet-examples.html#customizing-qtoolbar
@@ -193,15 +199,10 @@ QTabBar::tab {
 	padding: 5px;
 	color: #BBB;
 }
-QTabBar::close-button {
-	background: red;
-}
-ImprovedTabBarCloseButton,
+QTabBar::close-button,
 ImprovedTabBarCloseButton:hover {
-	/*image: url("styles:Darcula/hover.png");*/
-	border: none;
 	background: none;
-	padding: 1px;
+	border: none;
 }
 QTabBar::tab:selected {
 	background-color: #515658;
@@ -243,6 +244,10 @@ QTreeView::indicator:checked {
 }
 QTreeView::indicator:unchecked {
 	image: url("styles:Darcula/checkbox_unchecked.png");
+}
+
+Banner {
+	background-color: #2B2B2B;
 }
 
 QScrollBar:vertical {
@@ -311,20 +316,13 @@ EmoticonsDisplay {
 }
 
 QWidget#line {
-	/*&background-color: #515151;*/
 	background-color: none;
 	border: none;
 }
 
-/*QTableWidget {*/
-	/*background-color: #3C3F41;*/
-	/*border: 1px solid #323232;*/
-/*}*/
-
 QTextEdit {
 	selection-background-color: #214283;
 }
-
 
 QPushButton {
 	background-color: qlineargradient(
@@ -340,12 +338,10 @@ QPushButton {
 	padding-right: 12px;
 	padding-left: 12px;
 }
-
 QPushButton:pressed {
 	border: 1px solid #4E78A2;
 	border-radius: 3px;
 }
-
 QPushButton:disabled {
 	border: 1px solid #595A5A;
 	border-radius: 3px;
@@ -359,22 +355,6 @@ QWidget::pane {
 	margin-top: 0px;
 	background: transparent;
 	border: 0px solid transparent;
-}
-
-QWidget {/*
-	background: #3C3F41; */
-}
-
-/* QToolBar#ChatTabCloseButton { */
-	/* image: url("styles/intellij/hover.png"); */
-/* } */
-
-/*	Menus */
-QMenu {
-	/* width: 285px; */
-    background-color: #3C3F41;
-	border: 1px solid #515658;
-    margin: 0px; /* some spacing around the menu */
 }
 
 QWidget QMenu {
@@ -447,49 +427,10 @@ QLineEdit  {
 	height: 20px;
 	background-color: #45494A;
 }
-QDialog#AboutDialog {
-	/* background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, x3: 0, y3: 2 stop:0 #4D749B, stop:0.5 #5794D1, stop:1 #435566); */
-}
 QLineEdit:focus {
-	/* border-width: 1px; */
-    /* border-style: solid; */
-    /* border-color: blue; */
-	/* border: 1px solid #4E78A2; */
-	/* border: 1px solid #5794D1; */
-	/* border-top: 3px solid qlineargradient(
-			x1: 0, y1: 0,
-			x2: 0, y2: 1,
-			x3: 0, y3: 2,
-			stop:0 #4D749B,
-			stop:0.5 #5794D1,
-			stop:1 #435566
-	);
-	border-bottom: 3px solid qlineargradient(
-			x1: 0, y1: 0,
-			x2: 0, y2: 1,
-			x3: 0, y3: 2,
-			stop:0 #435566,
-			stop:0.5 #5794D1,
-			stop:1 #4D749B
-	);
-	border-left: 3px solid qlineargradient(
-			x1: 0, y1: 0,
-			x2: 1, y2: 0,
-			x3: 2, y3: 0,
-			stop:0 #4D749B,
-			stop:0.5 #5794D1,
-			stop:1 #435566
-	);
-	border-right: 3px solid qlineargradient(
-			x1: 0, y1: 0,
-			x2: 1, y2: 0,
-			x3: 2, y3: 0,
-			stop:0 #435566,
-			stop:0.5 #5794D1,
-			stop:1 #4D749B
-	); */
 	height: 20px;
 	border-radius: 3px;
+	border: 1px solid #4E78A2;
 }
 
 /*
@@ -566,8 +507,6 @@ QComboBox::drop-down {
 	border-left: 1px solid #646464;
 }
 
-
-
 QTableView {
 	outline: none;
 	/*alternate-background-color: red;*/
@@ -594,7 +533,7 @@ QHeaderView::section {
 	border: none;
 }
 
-/*http://stackoverflow.com/a/6197568*/
+/* http://stackoverflow.com/a/6197568 */
 QHeaderView::section:horizontal{
     /*margin-top: 4px;*/
     /*margin-bottom: 4px;*/
@@ -607,20 +546,6 @@ QHeaderView::section:horizontal{
 QHeaderView::section:horizontal:first{
     border-left-color: darkgray;
 }
-
-/* QHeaderView::section:checked */
-/* { */
-    /* background-color: red; */
-/* } */
-
-/* style the sort indicator */
-/* QHeaderView::down-arrow { */
-    /* image: url(down_arrow.png); */
-/* } */
-
-/* QHeaderView::up-arrow { */
-    /* image: url(up_arrow.png); */
-/* } */
 
 QPushButton#connectButton {
 	background-color: qlineargradient(
@@ -648,16 +573,6 @@ QPushButton#connectButton:disabled {
 	border-radius: 3px;
 	background: #3C3F41;
 }
-
-/* QLabel#changePasswordLabel, */
-/* QLabel#changeUsernameLabel, */
-/* QLabel#createRecoveryKeyLabel, */
-/* QLabel#resetPasswordLabel, */
-/* QLabel#configureBadgesLabel, */
-/* QLabel#redeemBadgesLabel { */
-	/* color: #589DF6; */
-/* } */
-
 QWidget#HeadlineLabel {
 	background-color: transparent;
 }
@@ -666,24 +581,13 @@ QLabel#OptionsHeadlineTitleLabel {
 	font-weight: bold;
 }
 
-/* ImprovedTabBarCloseButton#ServerTabCloseButton, */
-/*ImprovedTabBarCloseButton#ChatTabCloseButton {*/
-	/* image: url("styles/intellij/hover.png"); */
-/*}*/
-
-
 ConnectionInfoDialog {
-	/* border-top: 3px solid #515658; */
 }
 
 QTabWidget#byPacketTypeInformationTabWidget {
-	/* background: yellow; */
 	border-left: #282828;
 }
 
-/* QLabel#securityHintLabel { */
-	/* background-color: #2B2B2B; */
-/* } */
 QWidget#scrollAreaWidgetContents {
 	background-color: #2B2B2B;
 }
@@ -715,12 +619,7 @@ QProgressBar#progressBar {
 
 QProgressBar::chunk {
 	background: url(styles:Darcula/loadingBar.png);
-    /* background-color: #808080; */
-    /* width: 10px; */
-	/* border-radius: 5px; */
-	/* border: 10px solid #808080; */
-	/* background-size: 80px 60px; */
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 
 QSpinBox {
@@ -732,22 +631,10 @@ QLabel#label_2 {
 	margin-top: 5px;
 }
 
-/* QSplitter#identitiesLocalRemoteSplitter { */
-	/* border: 3px solid red; */
-/* } */
-
-/* QWidget#layoutWidget { */
-	/* border: 3px solid blue; */
-/* } */
-
-/* QLabel#BasicAdvancedLabel { */
-/* } */
-
 ConnectionInfoDialog {
 	background-color: #3C3F41;
 	border-top: 3px solid red;
 }
-
 
 /* https://github.com/ethanhs/material/blob/master/QSlider.qss */
 QSlider::groove:horizontal {
@@ -765,30 +652,17 @@ QSlider::handle:horizontal {
 ImprovedToolBar QSlider {
 	min-width: 100px;
 }
-Banner {
-	/* padding: 3px; */
-	/* background-color: #2B2B2B; */
-	/* border-bottom: 3px solid transparent; */
-}
 
-QWidget#NewsBanner {																/* Font colour News Ticker (for some reason my design requires it to be on top of the document to work) */
+QWidget#NewsBanner {
 	background-color: transparent;
 	color: rgb(216,216,216);
-	/* background-color is required to avoid black default font colour of News Ticker. Transparent is sufficient, but can be replaced with a colour if wished.
-	   Don't ask me why. My qss is probably faulty at same place. Doesn't like comments in same line. */
 }
 
-/*
-	About TeamSpeak 3
-	Help > About TeamSpeak 3
-*/
 QWidget#aboutTab {
 	margin-top: 10px;
 	background-color: #2B2B2B;
 }
 QLabel#madeInGermanyLabel {
-	/* border: 1px solid orange; */
-	/* image: url("styles/intellij/made-in-germany.png"); */
 }
 QTextEdit#copyrightTextBrowser {
 	background-color: #2B2B2B;
@@ -812,17 +686,10 @@ QTableView {
 
 QTableCornerButton::section,
 QTableView::item {
-	border: none;																	/* Important to avoid glitches in certain tables (Example: Tools -> Options -> Hotkeys) */
-	color: rgb(216,216,216);														/* Important to avoid white default font colour of selected items */
+	border: none;
+	color: rgb(216,216,216);
 }
-/*
-QTableView::item:hover {
-	background-color: rgba(62,79,94,0.5);
-}
-*/
 QTableView::item:selected {
-	/*background-color: rgb(62,79,94);*/
-	/*color: red;*/
 }
 
 QTableView::item:focus {
@@ -840,17 +707,13 @@ ImprovedWidget {
 
 QComboBox,
 QComboBox::drop-down {
-  /*background-color: red;*/
 }
 
 QComboBoxListView {
-  /*margin: 3px;*/
-  /*padding: 100px;*/
   border: 1px solid green;
 }
 
 QWidget#identitiesComboBox {
-  /*border: 9px solid orange;*/
 }
 
 QTabBar::close-button {
@@ -861,60 +724,12 @@ QComboBoxListView {
 	background-color: red;
 }
 
-/*QListView {
-	background-color: #3E434C;
-	outline: none;
-	border: none;
-}
-QListView {
-	border: 1px solid rgb(68,68,68);
-	background-color: rgb(34,34,34);
-	font-size: 12pt;
-	outline: none;
-	color: rgb(216,216,216);
-}*/
-/*
-QListView::item:hover {
-	background: transparent;
-}
-
-QListView::item:selected {
-	background-color: #4B6EAF;
-	color: #BBB;
-}
-
-QListView#ContentsWidget {
-}*/
-
-/*QListView#ContentsWidget::item {*/
-	/*height: 25px;*/
-/*}*/
-
-QWidget#playbackModeComboBox {
-	/*margin-right: 300px;*/
-}
-
-QSplitter#profilesLocalRemoteSplitter {
-	/*background: red;*/
-}
-
-QLabel#actionLabel {
-}
-
-QComboBox#identitiesComboBox {
-}
-
 QComboBoxListView {
 	background-color: #3C3F41;
 }
 
-/*QDialog#connectDialog QComboBoxListView::item {*/
 QDialog#connectDialog QListWidgetItem {
 	border: 1px solid yellow;
-}
-
-ConnectionInfoDialog QWidget {
-	border: 1px solid red;
 }
 
 OptionsDialog {
@@ -924,8 +739,4 @@ OptionsDialog {
 
 QListWidget#ContentsWidget {
 	border-right: 10px solid #3E434C;
-}
-
-Banner {
-	background-color: #2B2B2B;
 }
