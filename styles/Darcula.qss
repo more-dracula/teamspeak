@@ -149,8 +149,6 @@ QToolButton:checked, QToolButton#serverQueryAdvancedButton:checked {
 	/*color: #000;*/
 }
 QToolButton[popupMode="1"] {
-	/*border: 1px solid #5F5F5F;*/
-	/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #505c78, stop:1 #6f80aa);*/
 	border-radius: 3px;
 	padding-right: 15px;
 	height: 12px;
@@ -159,7 +157,6 @@ QToolButton[popupMode="1"]:hover,
 QToolButton[popupMode="1"]:checked,
 QToolButton[popupMode="1"]:pressed {
 	border: 1px solid #767676;
-	/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #505c78, stop:1 #6f80aa);*/
 	border-radius: 3px;
 	padding-right: 15px;
 }
@@ -231,13 +228,11 @@ QTreeView::branch:selected {
 
 QTreeView::branch:has-children:!has-siblings:closed,
 QTreeView::branch:closed:has-children:has-siblings {
-        /* border-image: none; */
-        image: url(styles:Darcula/treeCollapseNode.png);
+	image: url("styles:Darcula/treeCollapseNode.png");
 }
 QTreeView::branch:open:has-children:!has-siblings,
 QTreeView::branch:open:has-children:has-siblings  {
-        /* border-image: none; */
-        image: url(styles:Darcula/treeExpandNode.png);
+  image: url("styles:Darcula/treeExpandNode.png");
 }
 QTreeView::indicator:checked {
 	image: url("styles:Darcula/checkbox_checked.png");
@@ -248,6 +243,14 @@ QTreeView::indicator:unchecked {
 
 Banner {
 	background-color: #2B2B2B;
+}
+InfoFrame {
+	background-color: transparent;
+	border-top: 0px transparent;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 2px;
 }
 
 QScrollBar:vertical {
@@ -260,7 +263,6 @@ QScrollBar::handle:vertical {
 	border-right: 2px solid #2B2B2B;
 	min-height: 35px;
 }
-
 QScrollBar:horizontal {
 	border: none;
 	height: 12px;
@@ -276,23 +278,13 @@ QSplitter::handle:horizontal {
 	border-left: 1px solid #383B3D;
 	border-right: 1px solid #383B3D;
 	width: 20px;
-	image: url(styles:Darcula/splitter.png);
+	image: url("styles:Darcula/splitter.png");
 }
-
 QSplitter::handle:vertical {
 	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #383B3C, stop:1 #404142);
 	border-top: 1px solid #404142;
 	border-bottom: 1px solid #242627;
     height: 20px;
-}
-
-InfoFrame {
-	background-color: transparent;
-	border-top: 0px transparent;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-left: 10px;
-	padding-right: 2px;
 }
 
 ChatTab {
@@ -305,14 +297,13 @@ ChatTab {
 	padding-right: 2px;
 	padding-left: 10px;
 }
+EmoticonsDisplay {
+  background-color: #3C3F41;
+}
 
 QDialog {
 	background-color: #3C3F41;
 	border-radius: 0px;
-}
-
-EmoticonsDisplay {
-  background-color: #3C3F41;
 }
 
 QWidget#line {
@@ -357,10 +348,6 @@ QWidget::pane {
 	border: 0px solid transparent;
 }
 
-QWidget QMenu {
-  /*width: 300px;*/
-}
-
 QMenu::separator {
     height: 1px;
     background: #515151;
@@ -368,7 +355,7 @@ QMenu::separator {
 
 QMenu::item {
     padding: 2px 5px 2px 20px;
-    border: 1px solid transparent; /* reserve space for selection border */
+    border: 1px solid transparent;
 }
 
 QMenu::item:selected {
@@ -397,7 +384,6 @@ QToolTip {
 	background-color: #3C3F41;
 	border-radius: 3px;
 	border-style: solid;
-	/* color: #ffffff; background-color: #2a82da; border: 1px solid white; */
 }
 
 QWidget#MainWindowChatWidget {
@@ -433,9 +419,6 @@ QLineEdit:focus {
 	border: 1px solid #4E78A2;
 }
 
-/*
-	To remove white lines
-*/
 QStatusBar::item {
 	border: 1px solid transparent;
 	border-radius: 3px;
@@ -448,13 +431,11 @@ QCheckBox::indicator, QGroupBox::indicator {
 
 QCheckBox::indicator:unchecked,
 QGroupBox::indicator:unchecked {
-/* QTreeView::indicator:unchecked { */
     image: url("styles:Darcula/checkbox_unchecked.png");
 }
 
 QCheckBox::indicator:checked ,
 QGroupBox::indicator:checked {
-/* QTreeView::indicator:checked { */
     image: url("styles:Darcula/checkbox_checked.png");
 }
 
@@ -470,20 +451,9 @@ QRadioButton::indicator::unchecked {
 QRadioButton::indicator::checked {
     image: url(styles:Darcula/radiobutton_checked.png);
 }
-/*
-QFrame, QLabel, QToolTip a {
-	color: #287BDE;
-	text-decoration: underline;
-}*/
 
 QFrame {
-	/*background-color: red;*/
 }
-
-
-/* QTable a { */
-	/* color: #589DF6; */
-/* } */
 
 QLabel#label_17,
 QLabel#label_20,
@@ -509,18 +479,10 @@ QComboBox::drop-down {
 
 QTableView {
 	outline: none;
-	/*alternate-background-color: red;*/
-	/*border: 1px solid #323232;*/
-	/*background-color: #3C3F41;*/
-	/*selection-background-color: #4B6EAF;*/
 }
 QTableView::item:focus {
 	selection-background-color: yellow;
 }
-
-/*HotkeyTableWidget {*/
-	/*background-color: red;*/
-/*}*/
 
 QHeaderView::section {
     background-color: qlineargradient(
@@ -535,8 +497,6 @@ QHeaderView::section {
 
 /* http://stackoverflow.com/a/6197568 */
 QHeaderView::section:horizontal{
-    /*margin-top: 4px;*/
-    /*margin-bottom: 4px;*/
     border-style: solid;
     border-left-width: 1px;
     border-left-color: #5C5F61;
@@ -675,7 +635,6 @@ QTextEdit#licenseTextBrowser {
 WebServerList {
 	background-color: #3C3F41;
 }
-
 
 QTableView {
 	border: 1px solid #323232;
