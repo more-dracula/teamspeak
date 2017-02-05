@@ -4,5 +4,5 @@
 An elegant dark TeamSpeak 3 client theme based on the Darcula theme by JetBrains.
 The Darcula theme was most likely derived from the popular Dracula theme color pallete.
 
-#Screenshots (Pre-release)
+# Screenshots (Pre-release)
 ![Client as connected to server](https://i.imgur.com/Z0aIiGf.jpg "Client as connected to server")
