@@ -31,6 +31,7 @@
 * {
 	color: #BBBBBB;
 	selection-background-color: #214283;
+	outline: 0;
 }
 
 /*
@@ -41,6 +42,10 @@
 QMainWindow {
 	background: #3C3F41;
 }
+QObject#pageGeneral, QObject#pageDisplay, QObject#pageIgnore, QObject#pageWhisper {
+	background: #3C3F41;
+}
+
 
 /*
  * Top menu bar
@@ -131,12 +136,15 @@ QToolButton[popupMode="1"] {
 
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #414446, stop:1 #37393B);
 }
-QToolButton[popupMode="1"]:hover,
+QToolButton[popupMode="1"]:hover {
+	border: 1px solid #767676;
+}
 QToolButton[popupMode="1"]:checked,
 QToolButton[popupMode="1"]:pressed {
 	border: 1px solid #767676;
 	border-radius: 3px;
 	padding-right: 15px;
+	background: #5B5D5F;
 }
 QToolButton::menu-button {
 	border: 1px solid transparent;
@@ -449,13 +457,6 @@ QGroupBox {
 	padding: 15px;
 }
 
-QTableView {
-	outline: none;
-}
-QTableView::item:focus {
-	selection-background-color: yellow;
-}
-
 QHeaderView::section {
     background-color: qlineargradient(
 			x1:0, y1:0,
@@ -568,11 +569,10 @@ ConnectionInfoDialog {
 /* https://github.com/ethanhs/material/blob/master/QSlider.qss */
 QSlider::groove:horizontal {
   border: 0px solid transparent;
-  height: 5px;
+  height: 4px;
   background: #999;
   margin: 2px 0;
 }
-
 QSlider::handle:horizontal {
 	image: url(styles:Darcula/slider.png);
 	margin: -5px 0;
@@ -601,24 +601,7 @@ WebServerList {
 	background-color: #3C3F41;
 }
 
-QTableView {
-	border: 1px solid #323232;
-	background-color: transparent;
-	/*alternate-background-color: rgb(29,29,29);*/
-	outline: none;
-}
-
 QTableCornerButton::section,
-QTableView::item {
-	border: none;
-	color: rgb(216,216,216);
-}
-QTableView::item:selected {
-}
-
-QTableView::item:focus {
-	selection-background-color: yellow;
-}
 
 QWidget#page1,
 QWidget#page2 {
@@ -627,6 +610,8 @@ QWidget#page2 {
 
 ImprovedWidget {
 	background-color: #3C3F41;
+}
+ImprovedWidget#BookmarksManager QSplitter:horizontal {
 }
 
 QComboBox {
@@ -644,7 +629,12 @@ QComboBoxListView {
 	background-color: #3C3F41;
 	border: 1px solid black;
 }
-
+QComboBox QAbstractItemView::item {
+}
+QComboBox QAbstractItemView {
+	selection-background-color: #4B6EAF;
+	outline: 0;
+}
 QWidget#identitiesComboBox {
 }
 
@@ -652,7 +642,7 @@ QDialog#connectDialog QListWidgetItem {
 	border: 1px solid yellow;
 }
 OptionsDialog {
-	border-bottom: 1px solid #515151;
+	/*border-bottom: 1px solid #515151;*/
 	margin-bottom: 39px;
 }
 OptionsDialog QListWidget#ContentsWidget {
@@ -670,4 +660,91 @@ OptionsDialog QListWidget#ContentsWidget::item:hover {
 }
 OptionsDialog QListWidget#ContentsWidget::item::selected {
 	background: #4B6EAF;
+}
+
+
+QTreeViwe::item::selected {
+	outline: 0;
+	border: none;
+}
+
+/* https://doc.qt.io/qt-5.6/stylesheet-examples.html#customizing-qlistview */
+OptionsDialog QListView {
+	background: #3E434C;
+	border: none;
+}
+OptionsDialog QListView::item:hover {
+	background: none;
+	outline: 0;
+	border: none;
+}
+OptionsDialog QListView::item::selected:active,
+OptionsDialog QListView::item::selected:!active {
+	color: #BBB;
+	background: #4B6EAF;
+	outline: 0;
+	border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*QTableView {
+	border: 1px solid #323232;
+	background-color: transparent;
+	alternate-background-color: rgb(29,29,29);
+	outline: none;
+}
+QTableView::item {
+	border: none;
+	color: rgb(216,216,216);
+}
+QTableView::item:selected {
+}
+
+QTableView::item:focus {
+	selection-background-color: yellow;
+}
+
+QTableView {
+	outline: none;
+}
+QTableView::item:focus {
+	selection-background-color: yellow;
+}*/
+
+/* https://doc.qt.io/qt-5.6/stylesheet-examples.html#customizing-qtableview */
+QTableView {
+	qproperty-alternatingRowColors: 0;
+	gridline-color: #2C2C2C;
+	background: #3C3F41;
+	border: none;
+}
+QTableView::item {
+	border: 1px solid transparent;
+}
+QTableView::item:selected {
+	background: #4B6EAF;
+	color: #fff;
+}
+QTableView::item:focus {
+	border: 1px solid #79C0FF;
+}
+QToolBox {
+	/*background: red;*/
+}
+QToolBox::tab {
+	border-radius: 2px;
+	border: 1px solid #7A8084;
+}
+
+QFrame#toolBox::item {
+	background: yellow;
 }
