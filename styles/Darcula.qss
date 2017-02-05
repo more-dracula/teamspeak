@@ -134,19 +134,16 @@ QToolButton:pressed {
 	border: 1px solid #7A8084;
 	border-radius: 3px;
 	background: #5B5D5F;
-	/*color: #000;*/
 }
 QToolButton:hover {
 	border: 1px solid #7A8084;
 	border-radius: 3px;
 	background: #5B5D5F;
-	/*color: #000;*/
 }
 QToolButton:checked, QToolButton#serverQueryAdvancedButton:checked {
 	border: 1px solid #7A8084;
 	border-radius: 3px;
 	background: #5B5D5F;
-	/*color: #000;*/
 }
 QToolButton[popupMode="1"] {
 	border-radius: 3px;
