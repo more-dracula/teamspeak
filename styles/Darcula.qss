@@ -125,8 +125,11 @@ QToolButton:checked, QToolButton#serverQueryAdvancedButton:checked {
 }
 QToolButton[popupMode="1"] {
 	border-radius: 3px;
+	border: 1px solid #5F5F5F;
 	padding-right: 15px;
 	height: 12px;
+
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #414446, stop:1 #37393B);
 }
 QToolButton[popupMode="1"]:hover,
 QToolButton[popupMode="1"]:checked,
@@ -135,7 +138,6 @@ QToolButton[popupMode="1"]:pressed {
 	border-radius: 3px;
 	padding-right: 15px;
 }
-
 QToolButton::menu-button {
 	border: 1px solid transparent;
 	border-top-right-radius: 3px;
@@ -166,6 +168,9 @@ QTabBar {
 	/* https://doc.qt.io/qt-5.6/qtabbar.html#drawBase-prop */
 	qproperty-drawBase: false;
 }
+QTabBar#ChatTabBar::tab {
+	border: none;
+}
 ImprovedTabBar {
 	border: 1px solid #282828;
 	border-bottom: none;
@@ -182,6 +187,8 @@ ImprovedTabBarCloseButton:hover {
 }
 QTabBar::tab:selected {
 	background-color: #515658;
+	border: 1px solid #282828;
+	border-bottom: none;
 }
 QTabBar::tab:!selected {
 	background-color: transparent;
@@ -259,14 +266,13 @@ QScrollBar::handle:horizontal {
 QSplitter::handle:horizontal {
 	border-left: 1px solid #383B3D;
 	border-right: 1px solid #383B3D;
-	width: 20px;
 	image: url("styles:Darcula/splitter.png");
 }
 QSplitter::handle:vertical {
 	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #383B3C, stop:1 #404142);
 	border-top: 1px solid #404142;
 	border-bottom: 1px solid #242627;
-    height: 20px;
+  height: 20px;
 }
 
 ChatTab {
@@ -351,9 +357,10 @@ QMenu::item:disabled:selected {
 MainWindowChatWidget {
 	background-color: #2B2B2B;
 }
+QAbstractButton#EmoticonButton { margin-left: 1px; }
 
 QStatusBar {
-    background: #3C3F41;
+  background: #3C3F41;
 	border-top: 1px solid #464646;
 }
 
@@ -382,6 +389,7 @@ ChatLineEdit {
 	border: 1px solid #646464;
 	border-radius: 4px;
 	background: #45494A;
+	selection-background-color: #4B6EAF;
 }
 
 QLineEdit  {
@@ -390,13 +398,13 @@ QLineEdit  {
 	padding-right: 6px;
 	height: 20px;
 	background-color: #45494A;
+	selection-background-color: #4B6EAF;
 }
 QLineEdit:focus {
 	height: 20px;
 	border-radius: 3px;
 	border: 1px solid #4E78A2;
 }
-
 QStatusBar::item {
 	border: 1px solid transparent;
 	border-radius: 3px;
@@ -423,14 +431,11 @@ QRadioButton::indicator {
 }
 
 QRadioButton::indicator::unchecked {
-	image: url(styles:Darcula/radiobutton_unchecked.png);
+	image: url("styles:Darcula/radiobutton_unchecked.png");
 }
 
 QRadioButton::indicator::checked {
-    image: url(styles:Darcula/radiobutton_checked.png);
-}
-
-QFrame {
+    image: url("styles:Darcula/radiobutton_checked.png");
 }
 
 QLabel#label_17,
@@ -464,11 +469,11 @@ QHeaderView::section {
 
 /* http://stackoverflow.com/a/6197568 */
 QHeaderView::section:horizontal{
-    border-style: solid;
-    border-left-width: 1px;
-    border-left-color: #5C5F61;
-    border-right-color: #2A2C2D;
-    border-right-width: 1px;
+  border-style: solid;
+  border-left-width: 1px;
+  border-left-color: #5C5F61;
+  border-right-color: #2A2C2D;
+  border-right-width: 1px;
 }
 QHeaderView::section:horizontal:first{
     border-left-color: darkgray;
@@ -635,6 +640,8 @@ QComboBox::drop-down {
 }
 QComboBox::down-arrow { image: url("styles:Darcula/QComboBox/down-arrow.png"); }
 QComboBoxListView {
+	/*border: 1px solid black;*/
+	background-color: #3C3F41;
 	border: 1px solid black;
 }
 
@@ -648,6 +655,19 @@ OptionsDialog {
 	border-bottom: 1px solid #515151;
 	margin-bottom: 39px;
 }
-QListWidget#ContentsWidget {
-	border-right: 10px solid #3E434C;
+OptionsDialog QListWidget#ContentsWidget {
+	background: #3E434C;
+	outline: none;
+	border: none;
+}
+OptionsDialog QListWidget#ContentsWidget::item {
+	color: #BBB;
+}
+OptionsDialog QListWidget#ContentsWidget::item:hover {
+	background: none;
+	outline: none;
+	border: none;
+}
+OptionsDialog QListWidget#ContentsWidget::item::selected {
+	background: #4B6EAF;
 }
