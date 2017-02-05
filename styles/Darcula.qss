@@ -25,31 +25,6 @@
  */
 
 /*
- * Darcula Color Pallet:
- *
- * Normal Text: #BBBBBB
- * https://github.com/JetBrains/intellij-community/blob/c78df72ee08733ae908832171adad3f7984b4891/platform/platform-impl/src/com/intellij/ide/ui/laf/darcula/darcula.properties#L5
- *
- * Disabled Text: #808080
- * https://github.com/JetBrains/intellij-community/blob/c78df72ee08733ae908832171adad3f7984b4891/platform/platform-impl/src/com/intellij/ide/ui/laf/darcula/darcula.properties#L28
- *
- * Hyperlinks: #589DF6
- * https://github.com/JetBrains/intellij-community/blob/c78df72ee08733ae908832171adad3f7984b4891/platform/platform-impl/src/com/intellij/ide/ui/laf/darcula/darcula.properties#L37
- *
- * Selection Foreground: #BBBBBB
- * https://github.com/JetBrains/intellij-community/blob/306d705e1829bd3c74afc2489bfb7ed59d686b84/platform/platform-impl/src/com/intellij/ide/ui/laf/darcula/darcula_windows.properties#L3
- *
- * Text Selection Background: #214283
- * https://github.com/JetBrains/intellij-community/blob/7470920b2bba279082b8e4fc18ab84a578239d4c/platform/platform-resources/src/DefaultColorSchemesManager.xml#L1114
- *
- * Tab Border Color: #282828
- * https://github.com/JetBrains/intellij-community/blob/c78df72ee08733ae908832171adad3f7984b4891/platform/platform-impl/src/com/intellij/ide/ui/laf/darcula/darcula.properties#L55
- *
- * Dropdown Menu Sperator Line: #515151
- * https://github.com/JetBrains/intellij-community/blob/c78df72ee08733ae908832171adad3f7984b4891/platform/platform-impl/src/com/intellij/ide/ui/laf/darcula/darcula.properties#L74
- */
-
-/*
  * Universal Selector
  * https://doc.qt.io/qt-5.6/stylesheet-syntax.html#selector-types
  */
@@ -117,6 +92,9 @@ QToolBar::separator {
 /* Can't seem to get this childish child object to cooperate. */
 QToolBar > QMenu {
 	background-color: red;
+}
+ImprovedToolBar QSlider {
+	min-width: 100px;
 }
 
 QToolButton {
@@ -188,6 +166,10 @@ QTabBar {
 	/* https://doc.qt.io/qt-5.6/qtabbar.html#drawBase-prop */
 	qproperty-drawBase: false;
 }
+ImprovedTabBar {
+	border: 1px solid #282828;
+	border-bottom: none;
+}
 QTabBar::tab {
 	height: 16px;
 	padding: 5px;
@@ -238,6 +220,9 @@ QTreeView::indicator:unchecked {
 	image: url("styles:Darcula/checkbox_unchecked.png");
 }
 
+TreeView {
+	border-top: 3px solid #515658;
+}
 Banner {
 	background-color: #2B2B2B;
 }
@@ -306,10 +291,6 @@ QDialog {
 QWidget#line {
 	background-color: none;
 	border: none;
-}
-
-QTextEdit {
-	selection-background-color: #214283;
 }
 
 QPushButton {
@@ -463,17 +444,6 @@ QGroupBox {
 	padding: 15px;
 }
 
-QComboBox {
-	border: 1px solid #646464;
-	border-radius: 3px;
-	background-color: #3C3F41;
-	height: 22px;
-}
-
-QComboBox::drop-down {
-	border-left: 1px solid #646464;
-}
-
 QTableView {
 	outline: none;
 }
@@ -519,12 +489,10 @@ QPushButton#connectButton {
 	padding-right: 12px;
 	padding-left: 12px;
 }
-
 QPushButton#connectButton:pressed {
 	border: 1px solid #4E78A2;
 	border-radius: 3px;
 }
-
 QPushButton#connectButton:disabled {
 	border: 1px solid #595A5A;
 	border-radius: 3px;
@@ -573,9 +541,8 @@ QProgressBar#progressBar {
 	border-radius: 7px;
 	background-color: #3C3F41;
 }
-
 QProgressBar::chunk {
-	background: url(styles:Darcula/loadingBar.png);
+	background: url("styles:Darcula/loadingBar.png");
   background-repeat: no-repeat;
 }
 
@@ -606,10 +573,6 @@ QSlider::handle:horizontal {
 	margin: -5px 0;
 }
 
-ImprovedToolBar QSlider {
-	min-width: 100px;
-}
-
 QWidget#NewsBanner {
 	background-color: transparent;
 	color: rgb(216,216,216);
@@ -636,7 +599,7 @@ WebServerList {
 QTableView {
 	border: 1px solid #323232;
 	background-color: transparent;
-		alternate-background-color: rgb(29,29,29);
+	/*alternate-background-color: rgb(29,29,29);*/
 	outline: none;
 }
 
@@ -661,38 +624,30 @@ ImprovedWidget {
 	background-color: #3C3F41;
 }
 
-QComboBox,
-QComboBox::drop-down {
+QComboBox {
+	border: 1px solid #646464;
+	border-radius: 3px;
+	background-color: transparent;
+	height: 22px;
 }
-
+QComboBox::drop-down {
+	border-left: 1px solid #646464;
+}
+QComboBox::down-arrow { image: url("styles:Darcula/QComboBox/down-arrow.png"); }
 QComboBoxListView {
-  border: 1px solid green;
+	border: 1px solid black;
 }
 
 QWidget#identitiesComboBox {
 }
 
-QTabBar::close-button {
-  image: url(styles:Darcula/treeExpandNode.png);
-}
-
-QComboBoxListView {
-	background-color: red;
-}
-
-QComboBoxListView {
-	background-color: #3C3F41;
-}
-
 QDialog#connectDialog QListWidgetItem {
 	border: 1px solid yellow;
 }
-
 OptionsDialog {
 	border-bottom: 1px solid #515151;
 	margin-bottom: 39px;
 }
-
 QListWidget#ContentsWidget {
 	border-right: 10px solid #3E434C;
 }
