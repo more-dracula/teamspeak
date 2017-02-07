@@ -179,7 +179,7 @@ QTabBar#ChatTabBar::tab {
 	border: none;
 }
 ImprovedTabBar {
-	border: 1px solid #282828;
+	/*border: 1px solid #282828;*/
 	border-bottom: none;
 }
 QTabBar::tab {
@@ -194,7 +194,7 @@ ImprovedTabBarCloseButton:hover {
 }
 QTabBar::tab:selected {
 	background-color: #515658;
-	border: 1px solid #282828;
+	/*border: 1px solid #282828;*/
 	border-bottom: none;
 }
 QTabBar::tab:!selected {
@@ -208,7 +208,8 @@ QTabBar::close-button:hover {
 QTreeView {
 	background-color: #2B2B2B;
 	border: none;
-	/*alternate-background-color: false;*/
+	qproperty-animated: 1;
+	/*alternate-background-color: 0;*/
 }
 QTreeView::item:hover,
 QTreeView::branch:hover {
@@ -219,20 +220,19 @@ QTreeView::branch:selected {
 	background: #4B6EAF;
 	color: #BBB;
 }
-
 QTreeView::branch:has-children:!has-siblings:closed,
 QTreeView::branch:closed:has-children:has-siblings {
-	image: url("styles:Darcula/treeCollapseNode.png");
+	image: url("styles:Darcula/QTreeView/branch/closed.png");
 }
 QTreeView::branch:open:has-children:!has-siblings,
 QTreeView::branch:open:has-children:has-siblings  {
-  image: url("styles:Darcula/treeExpandNode.png");
+  image: url("styles:Darcula/QTreeView/branch/open.png");
 }
 QTreeView::indicator:checked {
-	image: url("styles:Darcula/checkbox_checked.png");
+	image: url("styles:Darcula/QTreeView/indicator/checked.png");
 }
 QTreeView::indicator:unchecked {
-	image: url("styles:Darcula/checkbox_unchecked.png");
+	image: url("styles:Darcula/QTreeView/indicator/unchecked.png");
 }
 
 TreeView {
@@ -243,7 +243,7 @@ Banner {
 }
 InfoFrame {
 	background-color: transparent;
-	border-top: 0px transparent;
+	border: none;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-left: 10px;
@@ -289,16 +289,20 @@ QScrollBar::handle:horizontal {
 	min-height: 35px;
 }
 
-QSplitter::handle:horizontal {
-	border-left: 1px solid #383B3D;
-	border-right: 1px solid #383B3D;
-	image: url("styles:Darcula/splitter.png");
+/*QObject#MainWindowServerTabsWidget */
+QSplitter::handle {
+	background: transparent;
 }
-QSplitter::handle:vertical {
+QObject#MainWindowServerTabsWidget QSplitter::handle {
+	height: 10px;
+	background-color: #3C3F41;
+	image: url("styles:Darcula/QSplitter/handle/horizontal.png");
+}
+MainWindow > QSplitter::handle:vertical {
 	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #383B3C, stop:1 #404142);
 	border-top: 1px solid #404142;
 	border-bottom: 1px solid #242627;
-  height: 20px;
+	height: 20px;
 }
 
 ChatTab {
@@ -436,43 +440,39 @@ QStatusBar::item {
 	border-radius: 3px;
 }
 
+/*QCheckBox, */
 QCheckBox::indicator, QGroupBox::indicator {
 	width: 15px;
-	height: 15px;
+	height: 16px;
 }
-
+QGroupBox {
+	border: none;
+	padding: 15px;
+}
 QCheckBox::indicator:unchecked,
 QGroupBox::indicator:unchecked {
-    image: url("styles:Darcula/checkbox_unchecked.png");
+    image: url("styles:Darcula/QCheckBox/indicator/unchecked.png");
 }
-
 QCheckBox::indicator:checked ,
 QGroupBox::indicator:checked {
-    image: url("styles:Darcula/checkbox_checked.png");
+    image: url("styles:Darcula/QCheckBox/indicator/checked.png");
 }
 
 QRadioButton::indicator {
 	width: 15px;
 	height: 16px;
 }
-
 QRadioButton::indicator::unchecked {
-	image: url("styles:Darcula/radiobutton_unchecked.png");
+	image: url("styles:Darcula/QRadioButton/indicator/unchecked.png");
 }
-
 QRadioButton::indicator::checked {
-    image: url("styles:Darcula/radiobutton_checked.png");
+    image: url("styles:Darcula/QRadioButton/indicator/checked.png");
 }
 
 QLabel#label_17,
 QLabel#label_20,
 QLabel#label {
 	font-weight: bold;
-}
-
-QGroupBox {
-	border: none;
-	padding: 15px;
 }
 
 QHeaderView::section {
@@ -534,7 +534,6 @@ ConnectionInfoDialog {
 }
 
 QTabWidget#byPacketTypeInformationTabWidget {
-	border-left: #282828;
 }
 
 QWidget#scrollAreaWidgetContents {
@@ -566,7 +565,7 @@ QProgressBar#progressBar {
 	background-color: #3C3F41;
 }
 QProgressBar::chunk {
-	background: url("styles:Darcula/loadingBar.png");
+	background: url("styles:Darcula/QProgressBar/chunk.png");
   background-repeat: no-repeat;
 }
 
@@ -597,7 +596,7 @@ QSlider::add-page:horizontal {
 	background: #3C3F41;
 }
 QSlider::handle:horizontal {
-	image: url("styles:Darcula/hslider.png");
+	image: url("styles:Darcula/QSlider/handle/horizontal.png");
 	margin-top: -35px;
 	margin-bottom: -40px;
 }
@@ -633,7 +632,6 @@ WebServerList {
 }
 
 QTableCornerButton::section,
-
 QWidget#page1,
 QWidget#page2 {
 	background-color: #3C3F41;
@@ -642,8 +640,8 @@ QWidget#page2 {
 ImprovedWidget {
 	background-color: #3C3F41;
 }
-ImprovedWidget#BookmarksManager QSplitter:horizontal {
-}
+/*ImprovedWidget#BookmarksManager QSplitter:horizontal {
+}*/
 
 QComboBox {
 	border: 1px solid #646464;
@@ -822,20 +820,19 @@ QSpinBox::down-button {
 }
 
 QSpinBox::down-button:hover {
-    /*border-image: url(:/images/spindown_hover.png) 1;*/
 }
-
 QSpinBox::down-button:pressed {
-    /*border-image: url(:/images/spindown_pressed.png) 1;*/
 }
-
 QSpinBox::down-arrow {
-    /*image: url(:/images/down_arrow.png);*/
     width: 7px;
     height: 7px;
 }
 
 QSpinBox::down-arrow:disabled,
-QSpinBox::down-arrow:off { /* off state when value in min */
-   /*image: url(:/images/down_arrow_disabled.png);*/
+QSpinBox::down-arrow:off {
+}
+
+VADDisplay {
+	border-radius: 5px;
+	border: 1px solid #54595F;
 }
