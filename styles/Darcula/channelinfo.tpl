@@ -1,41 +1,25 @@
 <!--
-TeamSpeak 3 Channel Infoframe Template (EN)
+	MIT License
 
-The replaceable variables are embedded in "%%" like %%CHANNEL_NAME%%. At this time you can also use
-%%?CHANNEL_NAME%% (note the questionmark), which is a tiny "if"- query. Use it, to remove the whole
-line, if a variable is empty or just "0".
+	Copyright (c) 2017 Hink
 
-Templates can be placed in "styles/" for default theme or in a sub folder named like an available
-theme (e.g. "styles/bluesky/"). Be aware that this template will not automaticly be translated when
-displayed.
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
 
-Predefined values have to be inside the html comment-tag to make sure that they will be parsed
-before the replacing begins! Remove the "#" to enable.
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
 
-#%%IMAGES_MAX_WIDTH%%256
-#%%IMAGES_MAX_HEIGHT%%256
-
-Replacable variables for channels:
-CHANNEL_NAME
-CHANNEL_ID
-CHANNEL_TOPIC
-CHANNEL_MAXCLIENTS
-CHANNEL_MAXFAMILYCLIENTS
-CHANNEL_NEEDED_TALK_POWER
-CHANNEL_ORDER
-CHANNEL_CODEC
-CHANNEL_CODEC_BITRATE
-CHANNEL_FLAGS
-CHANNEL_SUBSCRIPTION
-CHANNEL_CLIENTS_COUNT
-CHANNEL_VOICE_DATA_ENCRYPTED
-CHANNEL_VOICE_DATA_ENCRYPTED_FLAG
-CHANNEL_DESCRIPTION
-CHANNEL_ICON
-PLUGIN_INFO_DATA
-IMAGES_MAX_WIDTH
-TEMP_CHANNEL_DELETE_DELAY
-TEMP_CHANNEL_TIME_TO_DELETE
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
 -->
 
 <style type="text/css">
@@ -74,6 +58,7 @@ TEMP_CHANNEL_TIME_TO_DELETE
 		font-size: 7pt;
 	}
 </style>
+
 <table id="info">
   <tr title="Channel Order: %%CHANNEL_ORDER%%">
     <td class="label">Name:</td>
@@ -122,8 +107,8 @@ TEMP_CHANNEL_TIME_TO_DELETE
 	</tr>
 	%%?PLUGIN_INFO_DATA%%
 </table>
-<p style="margin-top: 4px; color:darkRed;">Channel will be deleted in %%?TEMP_CHANNEL_TIME_TO_DELETE%%.</p>
-</hr>
+
+<!-- <p style="margin-top: 4px; color:darkRed;">Channel will be deleted in %%?TEMP_CHANNEL_TIME_TO_DELETE%%.</p> -->
 <table id="list" width=100%>
 	<tr>
 		<td class="space label"><img src="iconpath:16x16_change_nickname.png" height="12" width="12" alt=""> Description:</td>

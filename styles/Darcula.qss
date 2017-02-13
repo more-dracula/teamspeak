@@ -82,8 +82,8 @@ QToolBar {
 	/* Finesse some padding into the buttons just like a I finessed your bitch. */
 	padding: 2px;
 	/* Disable the handle and make the bar static like IntelliJ IDEA */
-  /* https://doc.qt.io/qt-5.6/qtoolbar.html#movable-prop */
-  qproperty-movable: false;
+	/* https://doc.qt.io/qt-5.6/qtoolbar.html#movable-prop */
+	qproperty-movable: false;
 	/* Make the spacing of the Toolbar buttons accurate to IntelliJ IDEA */
 	spacing: 2px;
 }
@@ -96,7 +96,6 @@ QToolBar::separator {
 }
 /* Can't seem to get this childish child object to cooperate. */
 QToolBar > QMenu {
-	background-color: red;
 }
 ImprovedToolBar QSlider {
 	min-width: 125px;
@@ -270,7 +269,6 @@ QScrollBar {
 QScrollBar:vertical {
 	border: none;
 	width: 12px;
-	/*background: red;*/
 }
 QScrollBar::handle:vertical {
 	background-color: #545454;
@@ -284,9 +282,9 @@ QScrollBar:horizontal {
 }
 QScrollBar::handle:horizontal {
 	background-color: #545454;
-	border-top: 2px solid #2B2B2B;
-	border-bottom: 2px solid #2B2B2B;
-	min-height: 35px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	min-width: 35px;
 }
 
 /*QObject#MainWindowServerTabsWidget */
@@ -475,6 +473,9 @@ QLabel#label {
 	font-weight: bold;
 }
 
+QHeaderView {
+}
+
 QHeaderView::section {
     background-color: qlineargradient(
 			x1:0, y1:0,
@@ -580,7 +581,7 @@ QLabel#label_2 {
 
 ConnectionInfoDialog {
 	background-color: #3C3F41;
-	border-top: 3px solid red;
+	/*border-top: 3px solid red;*/
 }
 
 /* https://github.com/ethanhs/material/blob/master/QSlider.qss */
@@ -634,14 +635,12 @@ WebServerList {
 QTableCornerButton::section,
 QWidget#page1,
 QWidget#page2 {
-	background-color: #3C3F41;
+	background: red;
 }
 
 ImprovedWidget {
 	background-color: #3C3F41;
 }
-/*ImprovedWidget#BookmarksManager QSplitter:horizontal {
-}*/
 
 QComboBox {
 	border: 1px solid #646464;
@@ -658,12 +657,13 @@ QComboBoxListView {
 	background-color: #3C3F41;
 	border: 1px solid black;
 }
-QComboBox QAbstractItemView::item {
-}
 QComboBox QAbstractItemView {
 	selection-background-color: #4B6EAF;
 	outline: 0;
 }
+QComboBox QAbstractItemView::item {
+}
+
 QWidget#identitiesComboBox {
 }
 
@@ -689,7 +689,6 @@ OptionsDialog QListWidget#ContentsWidget::item::selected {
 	background: #4B6EAF;
 }
 
-
 QTreeViwe::item::selected {
 	outline: 0;
 	border: none;
@@ -713,40 +712,6 @@ OptionsDialog QListView::item::selected:!active {
 	border: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-/*QTableView {
-	border: 1px solid #323232;
-	background-color: transparent;
-	alternate-background-color: rgb(29,29,29);
-	outline: none;
-}
-QTableView::item {
-	border: none;
-	color: rgb(216,216,216);
-}
-QTableView::item:selected {
-}
-
-QTableView::item:focus {
-	selection-background-color: yellow;
-}
-
-QTableView {
-	outline: none;
-}
-QTableView::item:focus {
-	selection-background-color: yellow;
-}*/
-
 /* https://doc.qt.io/qt-5.6/stylesheet-examples.html#customizing-qtableview */
 QTableView {
 	qproperty-alternatingRowColors: 0;
@@ -765,11 +730,10 @@ QTableView::item:focus {
 	border: 1px solid #79C0FF;
 }
 QToolBox {
-	/*background: red;*/
 }
 QToolBox::tab {
 	border-radius: 2px;
-	border: 1px solid #7A8084;
+	border: 1px solid #646464;
 }
 
 QFrame#toolBox::item {
@@ -777,62 +741,28 @@ QFrame#toolBox::item {
 }
 
 QSpinBox {
-    padding-right: 15px; /* make room for the arrows */
-    /*border-image: url(:/images/frame.png) 4;*/
-    border-width: 3;
+	border-radius: 2px;
 }
 
-QSpinBox::up-button {
-    subcontrol-origin: border;
-    subcontrol-position: top right; /* position at the top right corner */
-
-    width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-    /*border-image: url(:/images/spinup.png) 1;*/
-    border-width: 1px;
-}
-
-QSpinBox::up-button:hover {
-    /*border-image: url(:/images/spinup_hover.png) 1;*/
-}
-
-QSpinBox::up-button:pressed {
-    /*border-image: url(:/images/spinup_pressed.png) 1;*/
-}
-
-QSpinBox::up-arrow {
-    /*image: url(:/images/up_arrow.png);*/
-    width: 7px;
-    height: 7px;
-}
-
-QSpinBox::up-arrow:disabled, QSpinBox::up-arrow:off { /* off state when value is max */
-   /*image: url(:/images/up_arrow_disabled.png);*/
-}
-
-QSpinBox::down-button {
-    subcontrol-origin: border;
-    subcontrol-position: bottom right; /* position at bottom right corner */
-
-    width: 16px;
-    /*border-image: url(:/images/spindown.png) 1;*/
-    border-width: 1px;
-    border-top-width: 0;
-}
-
-QSpinBox::down-button:hover {
-}
-QSpinBox::down-button:pressed {
-}
-QSpinBox::down-arrow {
-    width: 7px;
-    height: 7px;
-}
-
+QSpinBox::up-button {}
+QSpinBox::down-button {}
+QSpinBox::up-button:hover {}
+QSpinBox::down-button:hover {}
+QSpinBox::up-button:pressed {}
+QSpinBox::down-button:pressed {}
+QSpinBox::up-arrow {}
+QSpinBox::down-arrow {}
+QSpinBox::up-arrow:disabled,
+QSpinBox::up-arrow:off {}
+QSpinBox::down-arrow:off {}
 QSpinBox::down-arrow:disabled,
-QSpinBox::down-arrow:off {
-}
+QSpinBox::down-arrow:off {}
 
 VADDisplay {
 	border-radius: 5px;
 	border: 1px solid #54595F;
+}
+
+QlistWidget#identitiesListWidget {
+	background-color: #2B2B2B;
 }

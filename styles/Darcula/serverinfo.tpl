@@ -1,36 +1,25 @@
 <!--
-TeamSpeak 3 Server Infoframe Template (EN)
-Copyright 2009-2015 (c) TeamSpeak Systems GmbH
+	MIT License
 
-The replaceable variables are embedded in "%%" like %%SERVER_NAME%%. At this time you can also use
-%%?SERVER_NAME%% (note the questionmark), which is a tiny "if"- query. Use it, to remove the whole
-line, if a variable is empty or just "0".
+	Copyright (c) 2017 Hink
 
-Templates can be placed in "styles/" for default theme or in a sub folder named like an available
-theme (e.g. "styles/bluesky/"). Be aware that this template will not automaticly be translated when
-displayed.
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
 
-Replacable variables for server:
-SERVER_NAME
-SERVER_VERSION
-SERVER_VERSION_SHORT
-SERVER_PLATFORM
-SERVER_CLIENTS_ONLINE
-SERVER_QUERYCLIENTS_ONLINE
-SERVER_CHANNELS_ONLINE
-SERVER_UPTIME
-SERVER_CLIENT_CONNECTIONS
-SERVER_QUERY_CLIENT_CONNECTIONS
-SERVER_ADDRESS
-SERVER_PORT
-SERVER_ICON
-SERVER_LICENSE
-PLUGIN_INFO_DATA
-SERVER_MAXCLIENTS
-SERVER_NO_RESERVED_SLOTS
-SERVER_RESERVED_SLOTS
-SERVER_REFRESH_INACTIVE
-SERVER_REFRESH_ACTIVE
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
 -->
 
 <style type="text/css">

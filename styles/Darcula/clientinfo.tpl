@@ -1,55 +1,25 @@
 <!--
-TeamSpeak 3 Client Infoframe Template
-Copyright 2009-2015 (c) TeamSpeak Systems GmbH
+	MIT License
 
-The replaceable variables are embedded in "%%" like %%CLIENT_NAME%%. At this time you can
-also use %%?CLIENT_NAME%% (note the questionmark), which is a tiny "if"- query. Use it, to
-remove the whole line, if a variable is empty or just "0".
+	Copyright (c) 2017 Hink
 
-Templates can be placed in "styles/" for default theme or in a sub folder named like an available
-theme (e.g. "styles/bluesky/"). Be aware that this template will not automaticly be translated when
-displayed.
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
 
-Predefined values have to be inside the html comment-tag to make sure that they will be parsed
-before the replacing begins! Remove the "#" to enable.
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
 
-#%%AVATAR_MAX_WIDTH%%128
-#%%AVATAR_MAX_HEIGHT%%128
-#%%CLIENT_SERVER_SHOW_MAX_GROUPS%%3
-
-Replacable variables for clients:
-CLIENT_NAME
-CLIENT_NAME_PERCENT_ENCODED
-CLIENT_CUSTOM_NICK_NAME
-CLIENT_COUNTRY_TOOLTIP
-CLIENT_COUNTRY_IMAGE
-CLIENT_ID
-CLIENT_UNIQUE_ID
-CLIENT_AWAY_MESSAGE
-CLIENT_PLATFORM
-CLIENT_VERSION
-CLIENT_VERSION_SHORT
-CLIENT_VERSION_STATE   [Alpha|Beta|Stable]
-CLIENT_DESCRIPTION
-CLIENT_ICON
-CLIENT_TOTALCONNECTIONS
-CLIENT_CREATED
-CLIENT_LASTCONNECTED
-CLIENT_CONNECTED_SINCE
-CLIENT_FLAG_AVATAR
-CLIENT_IGNORE_AVATAR
-AVATAR_MAX_WIDTH
-AVATAR_MAX_HEIGHT
-CLIENT_TALK_REQUEST_TIME
-CLIENT_TALK_REQUEST_MSG
-CLIENT_VOLUME_MODIFIER
-CLIENT_CHANNEL_GROUP_NAME
-CLIENT_CHANNEL_GROUP_ICON
-CLIENT_SERVER_GROUP_NAME
-CLIENT_SERVER_GROUP_ICON
-CLIENT_DATABASE_ID
-CLIENT_SERVER_SHOW_MAX_GROUPS
-PLUGIN_INFO_DATA
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
 -->
 
 <style type="text/css">
