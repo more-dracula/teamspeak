@@ -46,6 +46,15 @@ QObject#pageGeneral, QObject#pageDisplay, QObject#pageIgnore, QObject#pageWhispe
 	background: #3C3F41;
 }
 
+QMenu {
+	qproperty-tearOffEnabled: 1;
+}
+
+QTornOffMenu {
+	qproperty-tearOffEnabled: 0;
+	qproperty-windowTitle: "TeamSpeak 3";
+}
+
 /*
  * Top menu bar
  * https://doc.qt.io/qt-5.6/stylesheet-examples.html#customizing-qmenubar
@@ -55,6 +64,7 @@ QMenuBar {
 	/* Add the fine line bellow the menu bar present in IntelliJ IDEA */
 	border-bottom: 1px solid #282828;
 	background: #3C3F41;
+	qproperty-tearOffEnabled: 1;
 }
 QMenuBar::item {
 	/* Make the spacing more accurate to IntelliJ IDEA */
@@ -65,9 +75,9 @@ QMenuBar::item:selected, QMenuBar::item:pressed {
 }
 
 QMenu {
-  background-color: #3C3F41;
+	background-color: #3C3F41;
 	border: 1px solid #515658;
-  margin: 0px; /* some spacing around the menu */
+	margin: 0px; /* some spacing around the menu */
 }
 
 /*
@@ -129,7 +139,6 @@ QToolButton[popupMode="1"] {
 	border: 1px solid #5F5F5F;
 	padding-right: 15px;
 	height: 12px;
-
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #414446, stop:1 #37393B);
 }
 QToolButton[popupMode="1"]:hover {
@@ -164,7 +173,7 @@ QWidget#MainWindowServerTabsWidget {
 	border-top: 1px solid #282828;
 }
 PermGroupsListView {
-  background: #3E434C;
+	background: #3E434C;
 }
 
 /*
@@ -227,7 +236,7 @@ QTreeView::branch:closed:has-children:has-siblings {
 }
 QTreeView::branch:open:has-children:!has-siblings,
 QTreeView::branch:open:has-children:has-siblings  {
-  image: url("styles:Darcula/QTreeView/branch/open.png");
+	image: url("styles:Darcula/QTreeView/branch/open.png");
 }
 QTreeView::indicator:checked {
 	image: url("styles:Darcula/QTreeView/indicator/checked.png");
@@ -256,7 +265,7 @@ QScrollBar::add-page:vertical,
 QScrollBar::sub-page:vertical,
 QScrollBar::add-page:horizontal,
 QScrollBar::sub-page:horizontal {
-    background: transparent;
+	background: transparent;
 }
 QScrollBar::add-line:vertical,
 QScrollBar::add-line:horizontal,
@@ -316,7 +325,7 @@ ChatTab {
 	padding-left: 10px;
 }
 EmoticonsDisplay {
-  background-color: #3C3F41;
+	background-color: #3C3F41;
 }
 
 QDialog {
@@ -390,7 +399,7 @@ MainWindowChatWidget {
 QAbstractButton#EmoticonButton { margin-left: 1px; }
 
 QStatusBar {
-  background: #3C3F41;
+	background: #3C3F41;
 	border-top: 1px solid #464646;
 }
 
@@ -491,14 +500,14 @@ QHeaderView::section {
 
 /* http://stackoverflow.com/a/6197568 */
 QHeaderView::section:horizontal{
-  border-style: solid;
-  border-left-width: 1px;
-  border-left-color: #5C5F61;
-  border-right-color: #2A2C2D;
-  border-right-width: 1px;
+	border-style: solid;
+	border-left-width: 1px;
+	border-left-color: #5C5F61;
+	border-right-color: #2A2C2D;
+	border-right-width: 1px;
 }
-QHeaderView::section:horizontal:first{
-    border-left-color: darkgray;
+QHeaderView::section:horizontal:first {
+	border-left-color: darkgray;
 }
 
 QPushButton#connectButton {
@@ -569,7 +578,7 @@ QProgressBar#progressBar {
 }
 QProgressBar::chunk {
 	background: url("styles:Darcula/QProgressBar/chunk.png");
-  background-repeat: no-repeat;
+	background-repeat: no-repeat;
 }
 
 QSpinBox {
@@ -587,9 +596,9 @@ ConnectionInfoDialog {
 
 /* https://github.com/ethanhs/material/blob/master/QSlider.qss */
 QSlider::groove:horizontal {
-  border: 0px solid transparent;
-  height: 4px;
-  background: #999;
+	border: 0px solid transparent;
+	height: 4px;
+	background: #999;
 }
 QSlider::sub-page:horizontal {
 	background: #999;
@@ -729,8 +738,7 @@ QTableView::item:selected {
 QTableView::item:focus {
 	border: 1px solid #79C0FF;
 }
-QToolBox {
-}
+QToolBox {}
 QToolBox::tab {
 	border-radius: 2px;
 	border: 1px solid #646464;
@@ -768,8 +776,8 @@ QlistWidget#identitiesListWidget {
 }
 
 QDockWidget {
-  border: 1px solid transparent;
-  titlebar-close-icon: url(:/icons/24/ic_close_black);
+	border: 1px solid transparent;
+	titlebar-close-icon: url(:/icons/24/ic_close_black);
 }
 QDockWidget QWidget {}
 QDockWidget DockTitleWidget {}
@@ -777,13 +785,13 @@ QDockWidget DockTitleWidget QPushButton,
 QDockWidget DockTitleWidget QToolButton {}
 QDockWidget DockTitleWidget QPushButton:hover,
 QDockWidget DockTitleWidget QToolButton:hover {
-  border-color: #8A8A8A;
-  border-radius: 2px;
-  background: qlineargradient(x1:0, y1 : 0, x2 : 0, y2 : 1,
+	border-color: #8A8A8A;
+	border-radius: 2px;
+	background: qlineargradient(x1:0, y1 : 0, x2 : 0, y2 : 1,
     stop : 0.0 #A0A0A0, stop : 0.3 #ACACAC,
     stop : 0.7 #ABABAB, stop : 1.0 #A3A3A3);
 }
 QDockWidget DockTitleWidget QPushButton::menu-indicator,
 QDockWidget DockTitleWidget QToolButton::menu-indicator {
-  image: none;
+	image: none;
 }
