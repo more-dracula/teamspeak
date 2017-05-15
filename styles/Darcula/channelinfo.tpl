@@ -77,6 +77,14 @@
 		<td><hr></td>
 	</tr>
 	<tr>
+		<td class="label">ID:</td>
+		<td>%%?CHANNEL_ID%%</td>
+	</tr>
+	<tr>
+		<td><hr></td>
+		<td><hr></td>
+	</tr>
+	<tr>
 		<td class="label">Codec:</td>
 		<td>
 			%%CHANNEL_CODEC%%
