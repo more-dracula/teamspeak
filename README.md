@@ -1,8 +1,8 @@
-# Darcula TeamSpeak Theme
-[![forthebadge](http://forthebadge.com/images/badges/gluten-free.svg)](http://forthebadge.com)
+# Darcula TeamSpeak 3 Client Theme
 
 An elegant dark TeamSpeak 3 client theme based on the programming environment theme "Darcula" by Konstantin Bulenkov (JetBrains IDE implimentation).
 The Darcula theme was most likely derived from the popular Dracula theme color pallete.
 
-# Screenshots (Pre-release)
-![Client as connected to server](https://i.imgur.com/GADM9Kr.png "Client as connected to server")
+## Screenshots
+![Client as connected to server](https://i.imgur.com/8gslTWc.png "Client as connected to server")
+![Within the options dialog](https://i.imgur.com/SzyrUpM.png "Within the options dialog")
