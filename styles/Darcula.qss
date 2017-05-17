@@ -46,15 +46,6 @@ QObject#pageGeneral, QObject#pageDisplay, QObject#pageIgnore, QObject#pageWhispe
 	background: #3C3F41;
 }
 
-QMenu {
-	qproperty-tearOffEnabled: 1;
-}
-
-QTornOffMenu {
-	qproperty-tearOffEnabled: 0;
-	qproperty-windowTitle: "TeamSpeak 3";
-}
-
 /*
  * Top menu bar
  * https://doc.qt.io/qt-5.6/stylesheet-examples.html#customizing-qmenubar
@@ -64,7 +55,7 @@ QMenuBar {
 	/* Add the fine line bellow the menu bar present in IntelliJ IDEA */
 	border-bottom: 1px solid #282828;
 	background: #3C3F41;
-	qproperty-tearOffEnabled: 1;
+	/*qproperty-tearOffEnabled: 1;*/
 }
 QMenuBar::item {
 	/* Make the spacing more accurate to IntelliJ IDEA */
@@ -74,11 +65,27 @@ QMenuBar::item:selected, QMenuBar::item:pressed {
 	background: #4B6EAF;
 }
 
+QMenuBar QMenu, BookmarksMenu {
+	qproperty-tearOffEnabled: 1;
+}
+
+QTornOffMenu {
+	qproperty-tearOffEnabled: 0;
+	qproperty-windowTitle: "TeamSpeak 3";
+}
+
 QMenu {
 	background-color: #3C3F41;
 	border: 1px solid #515658;
 	margin: 0px; /* some spacing around the menu */
 }
+
+QMenu::tear-off, QMenu::tearoff {
+	background-color: #BBB;
+	margin: 3px;
+}
+
+QMenu::tear-off:hover, QMenu::tearoff:hover {}
 
 /*
  * Customizable toolbar
