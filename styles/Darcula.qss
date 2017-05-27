@@ -80,6 +80,7 @@ QMenu {
 	margin: 0px; /* some spacing around the menu */
 }
 
+/* http://www.qtcentre.org/threads/32869-Styling-the-tear-off-handle-of-a-QMenu */
 QMenu::tear-off, QMenu::tearoff {
 	background-color: #BBB;
 	margin: 3px;
@@ -711,6 +712,23 @@ QTreeViwe::item::selected {
 }
 
 /* https://doc.qt.io/qt-5.6/stylesheet-examples.html#customizing-qlistview */
+QListView {
+	background-color: #3E434C;
+	border: none;
+}
+
+QListView::item:hover {
+	background: transparent;
+}
+
+QListView::item::selected, QListView::item:pressed {
+	background: #4B6EAF;
+}
+
+QListView::item::text {
+	color: #BBB;
+}
+
 OptionsDialog QListView {
 	background: #3E434C;
 	border: none;
