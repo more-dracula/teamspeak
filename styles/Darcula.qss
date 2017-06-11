@@ -483,7 +483,7 @@ QRadioButton::indicator::unchecked {
 	image: url("styles:Darcula/QRadioButton/indicator/unchecked.png");
 }
 QRadioButton::indicator::checked {
-    image: url("styles:Darcula/QRadioButton/indicator/checked.png");
+	image: url("styles:Darcula/QRadioButton/indicator/checked.png");
 }
 
 QLabel#label_17,
@@ -820,3 +820,36 @@ QDockWidget DockTitleWidget QPushButton::menu-indicator,
 QDockWidget DockTitleWidget QToolButton::menu-indicator {
 	image: none;
 }
+
+QFrame#accountActionsLine {
+	background-color: #BBB;
+}
+
+/* All the improved defaults stuff added in the 3.1.5 client*/
+QDockWidget {
+	border-top: 1px solid #444B55;
+	/*background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #383B3C, stop:1 #404142);*/
+	/*color: red;*/
+    border: 1px solid red;
+    /*titlebar-close-icon: url(close.png);
+    titlebar-normal-icon: url(undock.png);*/
+}
+QDockWidget::title {
+	/*border-top: 1px solid #252525;*/
+	/*border-bottom: 1px solid #242627;*/
+	color: #BBB;
+	/*border-top: 1px solid #404142;*/
+	/*border-bottom: 1px solid #323232;*/
+	/*border: 3px solid red;*/
+	text-align: left;
+	padding-left: 5px;
+	background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #434F60, stop:1 #414C5D);
+	border-bottom: 1px solid #2A313C;
+}
+/*QDockWidget::close-button, QDockWidget::float-button {}*/
+QDockWidget::close-button:hover, QDockWidget::float-button:hover {
+	border: 1px solid #7A8084;
+	border-radius: 3px;
+	background: #5B5D5F;
+}
+/*QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {}*/
